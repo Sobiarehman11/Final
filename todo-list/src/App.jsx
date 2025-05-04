@@ -1,11 +1,11 @@
 import { useState, ChangeEvent } from 'react';
 import './App.css';
 
-interface Task {
-  id: number;
-  name: string;
+// interface Task {
+//   id: number;
+//   name: string;
   
-}
+// }
 
 function App() {
   const [data, setData] = useState<Task[key]>([]);
@@ -28,16 +28,16 @@ function App() {
     setTask("");
   };
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = () => {
     setTask(e.target.value);
   };
 
-  const deleteTask = (id: number) => {
+  const deleteTask = () => {
     const filtered = data.filter((t) => t.id !== id);
     setData(filtered);
   };
 
-  const editTask = (id: number) => {
+  const editTask = () => {
     const toEdit = data.find((t) => t.id === id);
     if (toEdit) {
       setTask(toEdit.name); 
